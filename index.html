@@ -58,16 +58,28 @@
     </footer>
 
     <script>
+        // Retrieve stored user input on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            var storedInput = localStorage.getItem('userInput');
+            if (storedInput) {
+                document.getElementById('output').innerHTML = '<p>User Input: ' + storedInput + '</p>';
+            }
+        });
+
         function showDialog() {
             var userInput = document.getElementById('userInput').value;
             var outputDiv = document.getElementById('output');
-            
+
             // Create a paragraph element to display the user input
             var paragraph = document.createElement('p');
             paragraph.textContent = 'User Input: ' + userInput;
-            
+
             // Append the paragraph to the output div
+            outputDiv.innerHTML = '';
             outputDiv.appendChild(paragraph);
+
+            // Store user input in local storage
+            localStorage.setItem('userInput', userInput);
         }
     </script>
 
