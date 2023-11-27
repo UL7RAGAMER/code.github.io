@@ -62,14 +62,12 @@
     <script>
         function sendData() {
             var userInput = document.getElementById('userInput').value;
-        
-            // Send user input to the server
             fetch('https://ul7ragamer.github.io/code.github.io/submit', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
                 },
-                body: 'userInput=' + encodeURIComponent(userInput),
+                body: 'userInput=' + encodeURIComponent('YourInputHere'),
             })
             .then(response => {
                 if (!response.ok) {
@@ -79,13 +77,13 @@
             })
             .then(data => {
                 console.log('Data received:', data);
-                document.getElementById('output').innerHTML = '<p>Data sent successfully!</p>';
             })
             .catch(error => {
                 console.error('Error:', error);
-                document.getElementById('output').innerHTML = '<p>Error sending data</p>';
             });
-            
+                    
+            // Send user input to the server
+
         }
     </script>
 
