@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website Title</title>
+    <style>
+        /* Your existing styles here... */
+
+        form {
+            text-align: center;
+            margin: 20px;
+        }
+
+        input {
+            padding: 10px;
+            margin-right: 10px;
+        }
+
+        button {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        #output {
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Your Website Name</h1>
+        <p>Your tagline or description goes here.</p>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <section>
+        <h2>Welcome to Our Website!</h2>
+        <p>This is a simple example website. You can replace this content with your own.</p>
+
+        <form id="userInputForm">
+            <label for="userInput">Enter Something:</label>
+            <input type="text" id="userInput" name="userInput" required>
+            <button type="button" onclick="showDialog()">Submit</button>
+        </form>
+
+        <div id="output"></div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Your Website Name. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showDialog() {
+            var userInput = document.getElementById('userInput').value;
+            var outputDiv = document.getElementById('output');
+            
+            // Create a paragraph element to display the user input
+            var paragraph = document.createElement('p');
+            paragraph.textContent = 'User Input: ' + userInput;
+            
+            // Append the paragraph to the output div
+            outputDiv.appendChild(paragraph);
+        }
+    </script>
+
+</body>
+</html>
